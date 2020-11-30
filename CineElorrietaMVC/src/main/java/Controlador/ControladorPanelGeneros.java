@@ -30,7 +30,7 @@ public class ControladorPanelGeneros {
 	}
 	public void accionadoBotonSeleccionarPanelGeneros(int genero) {
 
-		//this.controlador.navegarPanelPeliculas(genero);
+		this.controlador.navegarPanelPeliculas(genero);
 	}
 	public PanelGeneros makePanelGeneros(ControladorPanelGeneros controladorGeneros) {
 		return new PanelGeneros(controladorGeneros);

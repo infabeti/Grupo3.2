@@ -17,8 +17,8 @@ public class Controlador {
 	private ControladorPanelGeneros controladorPanelGeneros;
 	private ControladorPanelLogin controladorPanelLogin;
 	private ControladorPanelPeliculas controladorPanelPeliculas;
-	//private ControladorPanelResumen controladorPanelResumen;
-	//private ControladorPanelFin controladorPanelFin;
+	private ControladorPanelResumen controladorPanelResumen;
+	private ControladorPanelFin controladorPanelFin;
 	
 	public Controlador(Modelo modelo, Vista vista) {
 		this.modelo = modelo;
@@ -27,8 +27,8 @@ public class Controlador {
 		this.controladorPanelGeneros = new ControladorPanelGeneros(this.modelo, this.vista, this);
 		this.controladorPanelLogin = new ControladorPanelLogin(this.modelo, this.vista, this);
 		this.controladorPanelPeliculas = new ControladorPanelPeliculas(this.modelo, this.vista, this);
-		//this.controladorPanelResumen = new ControladorPanelResumen(this.modelo, this.vista, this);
-		//this.controladorPanelFin = new ControladorPanelFin(this.modelo, this.vista, this);
+		this.controladorPanelResumen = new ControladorPanelResumen(this.modelo, this.vista, this);
+		this.controladorPanelFin = new ControladorPanelFin(this.modelo, this.vista, this);
 		this.navegarPanelBienvenida();
 	}
 	
@@ -53,7 +53,7 @@ public class Controlador {
 		
 	}
 	
-	/*public void navegarPanelResumen() {
+	public void navegarPanelResumen() {
 		System.out.println("Navegar panel Resumen");
 		this.controladorPanelResumen.mostrarPanelResumen();
 		
@@ -63,7 +63,7 @@ public class Controlador {
 		this.controladorPanelFin.mostrarPanelFin();
 		
 		
-	}*/
+	}
 	public ControladorPanelGeneros makeControladorGeneros(Modelo modelo, Vista vista, Controlador controlador) {
 		return new ControladorPanelGeneros(this.modelo, this.vista, this);
 	}
