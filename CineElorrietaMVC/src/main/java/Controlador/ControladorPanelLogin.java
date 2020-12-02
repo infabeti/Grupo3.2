@@ -27,9 +27,7 @@ public class ControladorPanelLogin {
 		this.vista.mostrarPanel(this.panelLogin);
 	}
 	
-	public void mostrarLoginError() {/*no se puede testear, es de la vista */
-		this.panelLogin.getLblError().setVisible(true);
-	}
+
 	public PanelLogin makePanelLogin(ControladorPanelLogin controladorLogin) {
 		return new PanelLogin(controladorLogin);
 	}
@@ -45,7 +43,7 @@ public class ControladorPanelLogin {
 		}
 		else {
 			System.out.println("Usuario/contraseña incorrectos");
-			mostrarLoginError();
+			panelLogin.mostrarLoginError();
 		}
 		
 	}

@@ -19,27 +19,18 @@ public class ControladorPanelBienvenida {
 		this.vista = vista;
 		this.controlador = controlador;	
 	}
-	
 	public void mostrarPanelBienvenida() {
 		this.panelBienvenida = new PanelBienvenida(this);
 		this.vista.mostrarPanel(this.panelBienvenida);
-		
-		
-		
-		//Parar ejecucion durante 3 segundos y Mostrar Panel de Login
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			Controlador.escribirErrorEnLog(e.toString());
-			e.printStackTrace();
-		}
+		//para llamar al metodo de los 3 segundos y se lo pasamos como milisegundos
+		modelo.delay3sec(3000);		
 		this.controlador.navegarPanelLogin();
 		
 		
 		
 	}
+	
+
 	
 	public void accionadoBottonMostrarPanelGeneros() {
 		this.controlador.navegarPanelGeneros();

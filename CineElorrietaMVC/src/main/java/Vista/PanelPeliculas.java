@@ -7,8 +7,9 @@ import javax.swing.JList;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
-
+import Controlador.Controlador;
 import Controlador.ControladorPanelPeliculas;
+import Modelo.Modelo;
 import Modelo.Pelicula;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -20,7 +21,10 @@ public class PanelPeliculas extends JPanel {
 	private JScrollPane scrollPane;
 	private static JList lista_pelis;
 	private JPanel txtGenero;
-	DefaultListModel modelo;
+	DefaultListModel modelo_lista;
+	private Modelo modelo;
+	private Controlador controlador;
+	
 	
 	/**
 	 * Create the panel.
@@ -52,7 +56,7 @@ public class PanelPeliculas extends JPanel {
 		txtGenero = new JPanel();
 		txtGenero.setBounds(221, 45, 156, 23);
 		add(txtGenero);
-		modelo = new DefaultListModel();
+		modelo_lista = new DefaultListModel();
 		
 		
 		 Pelicula[] peliculas=PanelGeneros.getPeliculas();
@@ -62,20 +66,20 @@ public class PanelPeliculas extends JPanel {
 		 
 		 
 		 
-		modelo.clear();
+		modelo_lista.clear();
 		for (int i = 0; i < peliculas.length; i++) {
 			if (peliculas[i].getGenero() == genero) {
 				String resultado = "";
 				System.out.println(peliculas[i].getTitulo());
 				resultado += peliculas[i].getTitulo() + "\n";
-				modelo.addElement(resultado);
+				modelo_lista.addElement(resultado);
 				
 				
 			}
 		}
 		
 		 
-		lista_pelis.setModel(modelo);
+		lista_pelis.setModel(modelo_lista);
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
@@ -105,10 +109,10 @@ public class PanelPeliculas extends JPanel {
 	}
 
 	public DefaultListModel getModelo() {
-		return modelo;
+		return modelo_lista;
 	}
 
 	public void setModelo(DefaultListModel modelo) {
-		this.modelo = modelo;
+		this.modelo_lista = modelo;
 	}
 }

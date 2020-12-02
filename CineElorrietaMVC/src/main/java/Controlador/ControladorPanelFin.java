@@ -22,18 +22,7 @@ public class ControladorPanelFin {
 		this.panelFin = new PanelFin(this);
 		this.vista.mostrarPanel(this.panelFin);
 		
-		
-		
-		
-		
-		//se cierra la ventana
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			Controlador.escribirErrorEnLog(e.toString());
-			e.printStackTrace();
-		}
+		modelo.delay3sec(3000);
 		System.exit(0);
 	
 	}

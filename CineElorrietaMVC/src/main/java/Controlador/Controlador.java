@@ -68,25 +68,5 @@ public class Controlador {
 		return new ControladorPanelGeneros(this.modelo, this.vista, this);
 	}
 	
-	//metodo que escribi en el fichero de logs los errores que le introduzcamos por parámetro
-	public static void escribirErrorEnLog(String error) {
-		
-		try {
-			FileWriter fr;
-			File fichero=new File("errores.log");
-			fr = new FileWriter(fichero,true);
-			BufferedWriter br= new BufferedWriter(fr);	//se crea el buffer para escibir
-			Date date = new Date(1);//revisar el 1, si no daba error
-			SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-			System.out.println(formatter.format(date));
-			br.write("["+formatter.format(date)+"]-> "+error); 	
-			br.newLine();//escribimos
-			br.close(); 		//cerramos el buffer
-		
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Ha ocurrido un error al escribir en el fichero de errores");
-			e.printStackTrace();
-		}	 
-	}
+
 }

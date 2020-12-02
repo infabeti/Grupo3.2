@@ -103,5 +103,8 @@ public class PanelLogin extends JPanel {
 	public void setPassContrasena(JPasswordField passContrasena) {
 		this.passContrasena = passContrasena;
 	}
+	public void mostrarLoginError() {
+		this.getLblError().setVisible(true);
+	}
 
 }

@@ -39,14 +39,10 @@ public class ControladorPanelPeliculas {
 		this.panelPeliculas = new PanelPeliculas(this);
 		this.vista.mostrarPanel(this.panelPeliculas);
 		System.out.println("Este es el genero seleccionado: "+genero);
-		//Cargar las peliculas del genero seleccionado
-		
-		
-		
-		 
-		
-		
+		//Cargar las peliculas del genero seleccionado	
 	}
+	
+
 	
 	public void accionadoBotonVolverPanelPeliculas() {
 		controlador.navegarPanelGeneros();
@@ -57,8 +53,7 @@ public class ControladorPanelPeliculas {
 		for(int i=0;i<peliculasSabado.size();i++) {
 			minutosTotales=(int) (minutosTotales+peliculasSabado.get(i).getDuracion());
 		}
-		
-		
+			
 		return minutosTotales;
 		
 		
@@ -74,7 +69,7 @@ public class ControladorPanelPeliculas {
 		
 		
 	}
-	
+
 	public void accionadoBotonAnadirPanelPeliculas(JList lista_pelis) {
 		Pelicula[] peliculas=PanelGeneros.getPeliculas();
 		//JList lista_pelis=PanelPeliculas.getLista_pelis();
@@ -128,6 +123,7 @@ public class ControladorPanelPeliculas {
 			
 		}
 	}
+	
 
 	public static void setPeliculasSabado(ArrayList<Pelicula> peliculasSabado) {
 		ControladorPanelPeliculas.peliculasSabado = peliculasSabado;
