@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
@@ -35,7 +36,7 @@ public class PanelPeliculas extends JPanel {
 		btnAnadirPelicula = new JButton("A\u00F1adir Pelicula");
 		btnAnadirPelicula.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controladorPanelPeliculas.accionadoBotonAnadirPanelPeliculas(lista_pelis);
+				controladorPanelPeliculas.accionadoBotonAnadirPeliculas(lista_pelis);
 			}
 		});
 		btnAnadirPelicula.setBounds(47, 314, 168, 23);
@@ -89,7 +90,12 @@ public class PanelPeliculas extends JPanel {
 		});
 		btnVolver.setBounds(308, 314, 89, 23);
 		add(btnVolver);
+		
+		
 
+	}
+	public static void mostrar_error_peli() {
+		JOptionPane.showMessageDialog(null, "No se puede introducir la pelicula, porque no hay tiempo");
 	}
 
 	public static JList getLista_pelis() {

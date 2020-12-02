@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import Controlador.Controlador;
 import Vista.PanelBienvenida;
 import Vista.PanelGeneros;
+import Vista.PanelPeliculas;
 import Vista.Vista;
 
 
@@ -24,9 +25,10 @@ public class Modelo {
 	private Controlador controlador;
 	private PanelGeneros panelGeneros;
 	private PanelBienvenida panelBienvenida;
+	private PanelPeliculas panelPelciulas;
 	private static ArrayList<Pelicula> peliculasSabado=new ArrayList <Pelicula>();
 	private static ArrayList<Pelicula> peliculasDomingo=new ArrayList <Pelicula>();
-	int minutosTotales=0;
+	
 	
 	//metodo que escribi en el fichero de logs los errores que le introduzcamos por parámetro
 	public  void escribirErrorEnLog(String error) {
@@ -64,6 +66,79 @@ public class Modelo {
 		
 		
 	}
+	
+	public int minutosTotalesSabado() {
+		int minutosTotales=0;
+		for(int i=0;i<peliculasSabado.size();i++) {
+			minutosTotales=(int) (minutosTotales+peliculasSabado.get(i).getDuracion());
+		}
+			
+		return minutosTotales;
+		
+		
+	}
+	public int minutosTotalesDomingo() {
+		int minutosTotales=0;
+		for(int i=0;i<peliculasDomingo.size();i++) {
+			minutosTotales=(int) (minutosTotales+peliculasDomingo.get(i).getDuracion());
+		}
+		
+		
+		return minutosTotales;
+		
+		
+	}
+	public void accionadoBotonAnadirPanelPeliculas(JList lista_pelis, Controlador controlador) {
+		Pelicula[] peliculas=PanelGeneros.getPeliculas();
+		//JList lista_pelis=PanelPeliculas.getLista_pelis();
+		System.out.println((String)lista_pelis.getSelectedValue());
+		
+
+		if(lista_pelis.getSelectedValue()==null) {
+			
+			System.out.println("No has seleccionado ninguna pelicula");
+			
+		}
+		else {
+			String titulo;
+			
+			for(int i=0;i<peliculas.length;i++) {
+				titulo=peliculas[i].getTitulo();
+				//System.out.println(titulo+"  "+(String)lista_pelis.getSelectedValue());
+				
+				if(titulo.toString().trim().equals(lista_pelis.getSelectedValue().toString().trim())) {
+					
+					
+					//Para que se pueda añadir una pelicula tiene que sumar menos de 8horas el sabado completo (480minutos)
+					if((peliculas[i].getDuracion()+minutosTotalesSabado())<480){
+						peliculasSabado.add(peliculas[i]);
+						controlador.navegarPanelGeneros();
+						System.out.println("Peliculas Sabado-> "+peliculasSabado.size());
+						System.out.println("Minutos-> "+minutosTotalesSabado());
+						
+						
+					}
+					else if((peliculas[i].getDuracion()+minutosTotalesDomingo())<360){
+						peliculasDomingo.add(peliculas[i]);
+						controlador.navegarPanelGeneros();
+						System.out.println("Peliculas Domingo-> "+peliculasDomingo.size());
+						System.out.println("Minutos-> "+minutosTotalesDomingo());
+						
+					}
+					else {
+						 panelPelciulas.mostrar_error_peli();
+						//JOptionPane.showMessageDialog(null, "No se puede introducir la pelicula, porque no hay tiempo");
+						controlador.navegarPanelResumen();
+					}
+					
+					
+				}
+				
+			}
+			
+		}
+	}
+
 	
 
 
