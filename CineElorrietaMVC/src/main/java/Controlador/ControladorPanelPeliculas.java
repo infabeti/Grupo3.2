@@ -55,25 +55,25 @@ public class ControladorPanelPeliculas {
 	}
 
 
-	public static void setPeliculasSabado(ArrayList<Pelicula> peliculasSabado) {
+	public void setPeliculasSabado(ArrayList<Pelicula> peliculasSabado) {
 		ControladorPanelPeliculas.peliculasSabado = peliculasSabado;
 	}
 
-	public static void setPeliculasDomingo(ArrayList<Pelicula> peliculasDomingo) {
+	public  void setPeliculasDomingo(ArrayList<Pelicula> peliculasDomingo) {
 		ControladorPanelPeliculas.peliculasDomingo = peliculasDomingo;
 	}
 
-	public static ArrayList<Pelicula> getPeliculasSabado() {
+	public static  ArrayList<Pelicula> getPeliculasSabado() {
 		return peliculasSabado;
 	}
 
 	
 
-	public static ArrayList<Pelicula> getPeliculasDomingo() {
+	public  static ArrayList<Pelicula> getPeliculasDomingo() {
 		return peliculasDomingo;
 	}
 	
-	public PanelPeliculas makePanelPeliculas(ControladorPanelPeliculas controladorPeliculas) {
+	public static PanelPeliculas makePanelPeliculas(ControladorPanelPeliculas controladorPeliculas) {
 		return new PanelPeliculas(controladorPeliculas);
 	}
 

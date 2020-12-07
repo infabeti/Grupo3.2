@@ -12,9 +12,12 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 import Controlador.Controlador;
+import Controlador.ControladorPanelPeliculas;
+import Controlador.ControladorPanelResumen;
 import Vista.PanelBienvenida;
 import Vista.PanelGeneros;
 import Vista.PanelPeliculas;
+import Vista.PanelResumen;
 import Vista.Vista;
 
 
@@ -140,7 +143,33 @@ public class Modelo {
 	}
 
 	
+	public String generar_resumen() {
+		int horas,minutos;
+		String resumen="";
 
+		resumen =resumen+"Sábado: \n";
+		
+		for(int i=0;i<peliculasSabado.size();i++) {
+			horas=(int) Math.floor((peliculasSabado.get(i).getDuracion())/60);
+			minutos=(int) Math.round((peliculasSabado.get(i).getDuracion())%60);
+		
+		resumen=resumen+peliculasSabado.get(i).getTitulo()+"-> "+horas+"h "+minutos+"m \n";
+		
+		}
+		
+		resumen =resumen+"\nDomingo: \n";
+	
+		for(int i=0;i< peliculasDomingo.size();i++) {
+		horas=(int) Math.floor(( peliculasDomingo.get(i).getDuracion())/60);
+		minutos=(int) Math.round(( peliculasDomingo.get(i).getDuracion())%60);
+		
+		resumen=resumen+ peliculasDomingo.get(i).getTitulo()+"-> "+horas+"h "+minutos+"m \n";
+		
 
+		
+	}
+	return resumen;
+	
+}
 
 }

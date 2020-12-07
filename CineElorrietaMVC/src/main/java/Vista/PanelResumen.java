@@ -49,6 +49,8 @@ public class PanelResumen extends JPanel {
 		add(btnRechazar);
 
 	}
+	
+
 
 	public static JTextArea getTxtResumen() {
 		return txtResumen;

@@ -23,14 +23,13 @@ public class ControladorPanelResumen {
 	public void mostrarPanelResumen() {
 		this.panelResumen = new PanelResumen(this);
 		this.vista.mostrarPanel(this.panelResumen);
-		int horas,minutos;
+
 		
 		
-		//txtArea.append("Goodbye Cruel World\n");
+		panelResumen.getTxtResumen().append(modelo.generar_resumen());
+	}
 		
-		panelResumen.getTxtResumen().append("Sábado: \n");
-		
-		for(int i=0;i<ControladorPanelPeliculas.getPeliculasSabado().size();i++) {
+	/*	for(int i=0;i<ControladorPanelPeliculas.getPeliculasSabado().size();i++) {
 			
 			
 			
@@ -56,7 +55,7 @@ public class ControladorPanelResumen {
 			
 		}
 		
-	}
+	}*/
 	
 	public void accionadoBotonRechazarPanelResumen() {
 		controlador.navegarPanelGeneros();
