@@ -68,7 +68,7 @@ public class PanelGeneros extends JPanel {
 		setLayout(null);
 
 		// ---------------------------Ventana----------------------------------------------
-		lblGeneros = new JLabel("Panel Generos");
+		lblGeneros = new JLabel("PANEL GENEROS");
 		lblGeneros.setBounds(61, 35, 115, 14);
 		add(lblGeneros);
 
@@ -91,10 +91,11 @@ public class PanelGeneros extends JPanel {
 		add(scrollPane);
 		
 		JList lista_pelis = new JList();
+		lista_pelis.setEnabled(false);
 		scrollPane.setViewportView(lista_pelis);
 		
 		DefaultListModel modelo = new DefaultListModel();//necesario crear un modelo con el que llenar el jlist
-		JButton btnAnadir = new JButton("Seleccionar");
+		JButton btnAnadir = new JButton("Continuar");
 		btnAnadir.setEnabled(false);
 		
 		btnAnadir.addActionListener(new ActionListener() {
@@ -105,7 +106,7 @@ public class PanelGeneros extends JPanel {
 			}
 		});
 		
-		JButton btnElegir = new JButton("Aceptar");
+		JButton btnElegir = new JButton("Seleccionar");
 		btnElegir.setBounds(61, 304, 168, 23);
 		btnElegir.addActionListener(new ActionListener() {
 		
@@ -122,7 +123,7 @@ public class PanelGeneros extends JPanel {
 							System.out.println(peliculas[i].getTitulo());
 							resultado += peliculas[i].getTitulo() + "\n";
 							modelo.addElement(resultado);
-							txt_seleccion.setText("");
+							txt_seleccion.setText("Drama");
 							
 						}
 
@@ -138,7 +139,7 @@ public class PanelGeneros extends JPanel {
 							System.out.println(peliculas[i].getTitulo());
 							resultado += peliculas[i].getTitulo() + "\n";
 							modelo.addElement(resultado);
-							txt_seleccion.setText("");
+							txt_seleccion.setText("Comedia");
 						
 							
 						
@@ -155,7 +156,7 @@ public class PanelGeneros extends JPanel {
 							System.out.println(peliculas[i].getTitulo());
 							resultado += peliculas[i].getTitulo() + "\n";
 							modelo.addElement(resultado);
-							txt_seleccion.setText("");
+							txt_seleccion.setText("Terror");
 							
 						}
 					}
@@ -170,7 +171,7 @@ public class PanelGeneros extends JPanel {
 							System.out.println(peliculas[i].getTitulo());
 							resultado += peliculas[i].getTitulo() + "\n";
 							modelo.addElement(resultado);
-							txt_seleccion.setText("");
+							txt_seleccion.setText("Ciencia ficción");
 						}
 					}
 					btnAnadir.setEnabled(true);
@@ -178,7 +179,7 @@ public class PanelGeneros extends JPanel {
 				}
 				
 				if ((!seleccion.equals("4")&&(!seleccion.equals("3"))&&(!seleccion.equals("2"))&&(!seleccion.equals("1"))))  {
-					JOptionPane.showMessageDialog(null, "Seleccion incorrecta");
+					JOptionPane.showMessageDialog(null, "Selección incorrecta");
 					txt_seleccion.setText("");
 					
 				}
@@ -190,8 +191,8 @@ public class PanelGeneros extends JPanel {
 
 		add(btnElegir);
 	
-		JLabel lblPelis = new JLabel("Peliculas Disponibles");
-		lblPelis.setBounds(282, 35, 181, 14);
+		JLabel lblPelis = new JLabel("PEL\u00CDCULAS DISPONIBLES");
+		lblPelis.setBounds(271, 35, 135, 14);
 		add(lblPelis);
 
 		

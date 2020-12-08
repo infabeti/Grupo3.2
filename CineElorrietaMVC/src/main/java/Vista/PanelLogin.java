@@ -25,19 +25,24 @@ public class PanelLogin extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelLogin(ControladorPanelLogin controladorPanelLogin) {
+		setBackground(Color.DARK_GRAY);
 		
 		setLayout(null);
 		
-		JLabel lblContrasena = new JLabel("Contrase\u00F1a:");
+		JLabel lblContrasena = new JLabel("CONTRASE\u00D1A:");
+		lblContrasena.setFont(new Font("Shocking Headline", Font.PLAIN, 16));
+		lblContrasena.setForeground(Color.WHITE);
 		lblContrasena.setBounds(142, 233, 89, 14);
 		add(lblContrasena);
 		
-		JLabel lblUsuario = new JLabel("Usuario:");
+		JLabel lblUsuario = new JLabel("USUARIO:");
+		lblUsuario.setFont(new Font("Shocking Headline", Font.PLAIN, 16));
+		lblUsuario.setForeground(Color.WHITE);
 		lblUsuario.setBounds(142, 202, 70, 14);
 		add(lblUsuario);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(252, 199, 86, 20);
+		txtUsuario.setBounds(252, 199, 121, 20);
 		add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
@@ -72,8 +77,9 @@ public class PanelLogin extends JPanel {
 		add(lblError);
 		
 		lblLogin = new JLabel("LOGIN");
-		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblLogin.setBounds(198, 112, 141, 55);
+		lblLogin.setForeground(Color.WHITE);
+		lblLogin.setFont(new Font("Shocking Headline", Font.PLAIN, 40));
+		lblLogin.setBounds(217, 109, 70, 55);
 		add(lblLogin);
 		lblError.setVisible(false);
 	
