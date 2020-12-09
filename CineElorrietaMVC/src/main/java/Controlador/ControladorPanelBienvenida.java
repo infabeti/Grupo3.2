@@ -23,7 +23,7 @@ public class ControladorPanelBienvenida {
 		this.panelBienvenida = new PanelBienvenida(this);
 		this.vista.mostrarPanel(this.panelBienvenida);
 		//para llamar al metodo de los 3 segundos y se lo pasamos como milisegundos
-		modelo.delay3sec(3000);		
+		this.modelo.delay3sec(3000);		
 		this.controlador.navegarPanelLogin();
 		
 		

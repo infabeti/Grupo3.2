@@ -21,8 +21,7 @@ public class ControladorPanelFin {
 	public void mostrarPanelFin() {
 		this.panelFin = new PanelFin(this);
 		this.vista.mostrarPanel(this.panelFin);
-		
-		modelo.delay3sec(3000);
+		this.modelo.delay3sec(3000);
 		System.exit(0);
 	
 	}

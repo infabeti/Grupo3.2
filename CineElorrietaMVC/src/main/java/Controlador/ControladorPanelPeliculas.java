@@ -45,12 +45,12 @@ public class ControladorPanelPeliculas {
 
 	
 	public void accionadoBotonVolverPanelPeliculas() {
-		controlador.navegarPanelGeneros();
+		this.controlador.navegarPanelGeneros();
 		
 	}
 	
 	public void accionadoBotonAnadirPeliculas(JList lista_pelis) {
-		modelo.accionadoBotonAnadirPanelPeliculas(lista_pelis,controlador);
+		this.modelo.accionadoBotonAnadirPanelPeliculas(lista_pelis,controlador);
 		
 	}
 
