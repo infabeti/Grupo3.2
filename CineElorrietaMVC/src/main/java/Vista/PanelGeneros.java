@@ -39,7 +39,7 @@ public class PanelGeneros extends JPanel {
 		//this.setSize(593, 439);
 	
 
-		//ARRAY DE PELICULAS
+		// ARRAY DE PELICULAS
 		peliculas[0] = new Pelicula(1, "Handia", 116);
 		peliculas[1] = new Pelicula(1, "La lista de Schindler", 197);
 		peliculas[2] = new Pelicula(1, "Cadena Perpetua", 142);
