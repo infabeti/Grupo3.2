@@ -25,14 +25,14 @@ public class PanelBienvenida extends JPanel{
 		
 		lblBienvenida = new JLabel("\u00A1Bienvenid@! ");
 		lblBienvenida.setForeground(Color.WHITE);
-		lblBienvenida.setFont(new Font("Shocking Headline", Font.PLAIN, 61));
-		lblBienvenida.setBounds(145, 99, 198, 136);
+		lblBienvenida.setFont(new Font("Arial", Font.PLAIN, 58));
+		lblBienvenida.setBounds(50, 11, 367, 136);
 		add(lblBienvenida);
 		
 		JLabel lblNewLabel = new JLabel("Cartelera del cine Elorrieta");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Shocking Headline", Font.PLAIN, 32));
-		lblNewLabel.setBounds(127, 245, 234, 44);
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblNewLabel.setBounds(99, 174, 244, 44);
 		add(lblNewLabel);
 		
 		initializeEvents();

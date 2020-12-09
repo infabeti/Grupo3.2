@@ -32,13 +32,13 @@ public class PanelLogin extends JPanel {
 		JLabel lblContrasena = new JLabel("CONTRASE\u00D1A:");
 		lblContrasena.setFont(new Font("Shocking Headline", Font.PLAIN, 16));
 		lblContrasena.setForeground(Color.WHITE);
-		lblContrasena.setBounds(142, 233, 89, 14);
+		lblContrasena.setBounds(115, 233, 116, 14);
 		add(lblContrasena);
 		
 		JLabel lblUsuario = new JLabel("USUARIO:");
 		lblUsuario.setFont(new Font("Shocking Headline", Font.PLAIN, 16));
 		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(142, 202, 70, 14);
+		lblUsuario.setBounds(115, 202, 97, 14);
 		add(lblUsuario);
 		
 		txtUsuario = new JTextField();
@@ -78,8 +78,8 @@ public class PanelLogin extends JPanel {
 		
 		lblLogin = new JLabel("LOGIN");
 		lblLogin.setForeground(Color.WHITE);
-		lblLogin.setFont(new Font("Shocking Headline", Font.PLAIN, 40));
-		lblLogin.setBounds(217, 109, 70, 55);
+		lblLogin.setFont(new Font("Arial", Font.PLAIN, 40));
+		lblLogin.setBounds(172, 78, 143, 55);
 		add(lblLogin);
 		lblError.setVisible(false);
 	
