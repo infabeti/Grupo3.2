@@ -34,8 +34,6 @@ public class ControladorPanelLogin {
 
 	public void accionadoBotonEntrarPanelLogin(String usuario2, String pass) {
 		System.out.println("Ejecutando evento Boton Entrar");
-		System.out.println(usuario2);
-		System.out.println(pass);
 		
 		if(usuario2.equals(this.usuario) && pass.equals(this.contrasena)) {		
 			System.out.println("Usuario/Contraseña correctos");
