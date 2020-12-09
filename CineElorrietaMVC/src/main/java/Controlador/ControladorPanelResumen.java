@@ -29,33 +29,7 @@ public class ControladorPanelResumen {
 		panelResumen.getTxtResumen().append(modelo.generar_resumen());
 	}
 		
-	/*	for(int i=0;i<ControladorPanelPeliculas.getPeliculasSabado().size();i++) {
-			
-			
-			
-			horas=(int) Math.floor((ControladorPanelPeliculas.getPeliculasSabado().get(i).getDuracion())/60);
-			minutos=(int) Math.round((ControladorPanelPeliculas.getPeliculasSabado().get(i).getDuracion())%60);
-			
-			panelResumen.getTxtResumen().append(ControladorPanelPeliculas.getPeliculasSabado().get(i).getTitulo()+"-> "+
-					horas+"h "+minutos+"m \n");
-			
-			
-		}
-		
-		panelResumen.getTxtResumen().append("\nDomingo: \n");
-		
-		for(int i=0;i<ControladorPanelPeliculas.getPeliculasDomingo().size();i++) {
-			horas=(int) Math.floor((ControladorPanelPeliculas.getPeliculasDomingo().get(i).getDuracion())/60);
-			minutos=(int) Math.round((ControladorPanelPeliculas.getPeliculasDomingo().get(i).getDuracion())%60);
-			
-			
-			panelResumen.getTxtResumen().append(ControladorPanelPeliculas.getPeliculasDomingo().get(i).getTitulo()+"-> "+
-					horas+"h "+minutos+"m \n");
-			
-			
-		}
-		
-	}*/
+	
 	
 	public void accionadoBotonRechazarPanelResumen() {
 		controlador.navegarPanelGeneros();
