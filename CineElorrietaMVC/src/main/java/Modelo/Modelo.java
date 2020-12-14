@@ -29,6 +29,7 @@ public class Modelo {
 	private PanelGeneros panelGeneros;
 	private PanelBienvenida panelBienvenida;
 	private PanelPeliculas panelPelciulas;
+	//private PanelEditar panelEditar;
 	private static ArrayList<Pelicula> peliculasSabado=new ArrayList <Pelicula>();
 	private static ArrayList<Pelicula> peliculasDomingo=new ArrayList <Pelicula>();
 	
