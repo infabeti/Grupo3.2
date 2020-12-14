@@ -56,7 +56,7 @@ public class ControladorPanelPeliculas {
 
 
 	public void setPeliculasSabado(ArrayList<Pelicula> peliculasSabado) {
-		ControladorPanelPeliculas.peliculasSabado = peliculasSabado;
+		this.peliculasSabado = peliculasSabado;
 	}
 
 	public  void setPeliculasDomingo(ArrayList<Pelicula> peliculasDomingo) {
