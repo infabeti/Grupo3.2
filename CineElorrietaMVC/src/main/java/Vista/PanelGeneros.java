@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import Controlador.ControladorPanelGeneros;
+import Modelo.Cartelera;
 import Modelo.Pelicula;
 
 import javax.swing.JTextField;
@@ -31,7 +32,9 @@ public class PanelGeneros extends JPanel {
 	private JTextField txt_seleccion;
 	String resultado="";
 	static String seleccion;
-	private static Pelicula[] peliculas = new Pelicula[16];
+	//private static Pelicula[] peliculas = new Pelicula[16];
+	private Pelicula[] peliculas=Cartelera.getPeliculas();
+	
 
 	public PanelGeneros(ControladorPanelGeneros controladorPanelGeneros) {
 
@@ -40,7 +43,7 @@ public class PanelGeneros extends JPanel {
 	
 
 		// ARRAY DE PELICULAS
-		peliculas[0] = new Pelicula(1, "Handia", 116);
+		/*peliculas[0] = new Pelicula(1, "Handia", 116);
 		peliculas[1] = new Pelicula(1, "La lista de Schindler", 197);
 		peliculas[2] = new Pelicula(1, "Cadena Perpetua", 142);
 		peliculas[3] = new Pelicula(1, "Million Dollar Baby", 133);
@@ -58,7 +61,7 @@ public class PanelGeneros extends JPanel {
 		peliculas[12] = new Pelicula(4, "2001: Odisea en el espacio", 142);
 		peliculas[13] = new Pelicula(4, "La novia de Frankenstein", 75);
 		peliculas[14] = new Pelicula(4, "El planeta de los simios", 115);
-		peliculas[15] = new Pelicula(4, "Alien, el octavo pasajero", 117);
+		peliculas[15] = new Pelicula(4, "Alien, el octavo pasajero", 117);*/
 
 		// ARRAYLIST PARA PARA PELIS SELECCIONADAS
 		ArrayList <Pelicula> pelis_seleccion = new ArrayList<>();
@@ -222,13 +225,13 @@ public class PanelGeneros extends JPanel {
 		};
 	}
 
-	public static  Pelicula[] getPeliculas() {
+	/*public static  Pelicula[] getPeliculas() {
 		return peliculas;
 	}
 
 	public static void setPeliculas(Pelicula[] peliculas) {
 		PanelGeneros.peliculas = peliculas;
-	}
+	}*/
 
 	public static String getSeleccion() {
 		return seleccion;

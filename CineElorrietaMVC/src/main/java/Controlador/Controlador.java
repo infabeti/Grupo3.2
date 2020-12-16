@@ -7,12 +7,14 @@ import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
+import Modelo.Cartelera;
 import Modelo.Modelo;
 import Vista.Vista;
 
 public class Controlador {
 	private Modelo modelo;
 	private Vista vista;
+	private Cartelera cartelera;
 	private ControladorPanelBienvenida controladorPanelBienvenida;
 	private ControladorPanelGeneros controladorPanelGeneros;
 	private ControladorPanelLogin controladorPanelLogin;
@@ -29,6 +31,7 @@ public class Controlador {
 		this.controladorPanelPeliculas = new ControladorPanelPeliculas(this.modelo, this.vista, this);
 		this.controladorPanelResumen = new ControladorPanelResumen(this.modelo, this.vista, this);
 		this.controladorPanelFin = new ControladorPanelFin(this.modelo, this.vista, this);
+		Cartelera.cargar_pelis();
 		this.navegarPanelBienvenida();
 	}
 	
