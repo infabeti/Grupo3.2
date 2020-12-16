@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.Cartelera;
 import Modelo.Modelo;
 import Vista.PanelGeneros;
 import Vista.PanelLogin;
@@ -11,6 +12,7 @@ public class ControladorPanelResumen {
 	@SuppressWarnings("unused")
 	private Modelo modelo;
 	private Vista vista;
+	private Cartelera cartelera;
 	private Controlador controlador;
 	private PanelResumen panelResumen;
 	
@@ -33,8 +35,8 @@ public class ControladorPanelResumen {
 	
 	public void accionadoBotonRechazarPanelResumen() {
 		controlador.navegarPanelGeneros();
-	//	ControladorPanelPeliculas.getPeliculasSabado().removeAll(ControladorPanelPeliculas.getPeliculasSabado());
-		//ControladorPanelPeliculas.getPeliculasDomingo().removeAll(ControladorPanelPeliculas.getPeliculasDomingo());
+		cartelera.getPeliculasSabado().removeAll(cartelera.getPeliculasSabado());
+		cartelera.getPeliculasDomingo().removeAll(cartelera.getPeliculasDomingo());
 		
 	}
 	
