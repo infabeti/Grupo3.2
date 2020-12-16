@@ -41,7 +41,7 @@ public class ControladorPanelLogin {
 		}
 		if(user.equals(this.usuario2) && pass.equals(this.contrasena2)) {
 			System.out.println("Usuario/Contraseña correctos");
-			this.controlador.ControladorPanelEditar();
+			this.controlador.navegarPanelEditar();
 		}
 		else {
 			System.out.println("Usuario/contraseña incorrectos");
