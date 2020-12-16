@@ -33,8 +33,8 @@ public class ControladorPanelResumen {
 	
 	public void accionadoBotonRechazarPanelResumen() {
 		controlador.navegarPanelGeneros();
-		ControladorPanelPeliculas.getPeliculasSabado().removeAll(ControladorPanelPeliculas.getPeliculasSabado());
-		ControladorPanelPeliculas.getPeliculasDomingo().removeAll(ControladorPanelPeliculas.getPeliculasDomingo());
+	//	ControladorPanelPeliculas.getPeliculasSabado().removeAll(ControladorPanelPeliculas.getPeliculasSabado());
+		//ControladorPanelPeliculas.getPeliculasDomingo().removeAll(ControladorPanelPeliculas.getPeliculasDomingo());
 		
 	}
 	

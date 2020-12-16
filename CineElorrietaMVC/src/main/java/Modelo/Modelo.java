@@ -29,8 +29,10 @@ public class Modelo {
 	private PanelGeneros panelGeneros;
 	private PanelBienvenida panelBienvenida;
 	private PanelPeliculas panelPelciulas;
-	private static ArrayList<Pelicula> peliculasSabado=new ArrayList <Pelicula>();
-	private static ArrayList<Pelicula> peliculasDomingo=new ArrayList <Pelicula>();
+	Pelicula[] peliculas=Cartelera.getPeliculas();
+	ArrayList<Pelicula> peliculasSabado=Cartelera.getPeliculasSabado();
+	ArrayList<Pelicula> peliculasDomingo=Cartelera.getPeliculasDomingo();
+
 	
 	
 	//metodo que escribi en el fichero de logs los errores que le introduzcamos por parámetro
@@ -92,7 +94,7 @@ public class Modelo {
 		
 	}
 	public void accionadoBotonAnadirPanelPeliculas(JList lista_pelis, Controlador controlador) {
-		Pelicula[] peliculas=Cartelera.getPeliculas();
+
 		//JList lista_pelis=PanelPeliculas.getLista_pelis();
 		System.out.println((String)lista_pelis.getSelectedValue());
 		
@@ -166,7 +168,6 @@ public class Modelo {
 		resumen=resumen+ peliculasDomingo.get(i).getTitulo()+"-> "+horas+"h "+minutos+"m \n";
 		
 
-		
 	}
 	return resumen;
 	

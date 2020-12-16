@@ -1,8 +1,15 @@
 package Modelo;
 
+import java.util.ArrayList;
+import javax.swing.JList;
+import Controlador.Controlador;
+import Vista.PanelPeliculas;
+
 public class Cartelera {
 
 	private static Pelicula[] peliculas = new Pelicula[16];
+	private static   ArrayList<Pelicula> peliculasSabado=new ArrayList <Pelicula>();
+	private static   ArrayList<Pelicula> peliculasDomingo=new ArrayList <Pelicula>();
 	
 
 	public Cartelera() {
@@ -20,6 +27,26 @@ public class Cartelera {
 		Cartelera.peliculas = peliculas;
 	}
 	
+
+	public static ArrayList<Pelicula> getPeliculasSabado() {
+		return peliculasSabado;
+	}
+
+
+	public  void setPeliculasSabado(ArrayList<Pelicula> peliculasSabado) {
+		this.peliculasSabado = peliculasSabado;
+	}
+
+
+	public static  ArrayList<Pelicula> getPeliculasDomingo() {
+		return peliculasDomingo;
+	}
+
+
+	public  void setPeliculasDomingo(ArrayList<Pelicula> peliculasDomingo) {
+		this.peliculasDomingo = peliculasDomingo;
+	}
+
 
 	public  static  void cargar_pelis() {
 		
@@ -45,4 +72,8 @@ public class Cartelera {
 
 	
 	}
+	
+
+	
+
 }
