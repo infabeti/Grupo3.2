@@ -46,6 +46,7 @@ public class ControladorPanelPeliculas {
 	public void accionadoBotonAnadirPeliculas(JList lista_pelis) {
 		this.modelo.accionadoBotonAnadirPanelPeliculas(lista_pelis,controlador);
 		
+		
 	}
 
 	

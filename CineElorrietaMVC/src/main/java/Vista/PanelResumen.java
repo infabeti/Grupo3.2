@@ -7,6 +7,8 @@ import javax.swing.JTextArea;
 
 import Controlador.ControladorPanelLogin;
 import Controlador.ControladorPanelResumen;
+import Modelo.Cartelera;
+import Modelo.Modelo;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -14,6 +16,8 @@ import java.awt.event.ActionEvent;
 
 public class PanelResumen extends JPanel {
 	private static JTextArea txtResumen;
+	private Modelo modelo;
+	private Cartelera cartelera;
 
 	/**
 	 * Create the panel.
@@ -51,7 +55,11 @@ public class PanelResumen extends JPanel {
 	}
 	
 
-
+	public void texto_resumen() {
+		this.getTxtResumen().append(cartelera.generar_resumen_cartelera());
+		
+	
+	}
 	public static JTextArea getTxtResumen() {
 		return txtResumen;
 	}

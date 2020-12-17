@@ -34,38 +34,10 @@ public class PanelGeneros extends JPanel {
 	static String seleccion;
 	//private static Pelicula[] peliculas = new Pelicula[16];
 	private Pelicula[] peliculas=Cartelera.getPeliculas();
+	DefaultListModel modelo = new DefaultListModel();
 	
 
 	public PanelGeneros(ControladorPanelGeneros controladorPanelGeneros) {
-
-	
-		//this.setSize(593, 439);
-	
-
-		// ARRAY DE PELICULAS
-		/*peliculas[0] = new Pelicula(1, "Handia", 116);
-		peliculas[1] = new Pelicula(1, "La lista de Schindler", 197);
-		peliculas[2] = new Pelicula(1, "Cadena Perpetua", 142);
-		peliculas[3] = new Pelicula(1, "Million Dollar Baby", 133);
-
-		peliculas[4] = new Pelicula(2, "Scary movie", 90);
-		peliculas[5] = new Pelicula(2, "El gran Lebowsky", 119);
-		peliculas[6] = new Pelicula(2, "La vida de Brian", 94);
-		peliculas[7] = new Pelicula(2, "Aterriza como puedas", 117);
-
-		peliculas[8] = new Pelicula(3, "Psicosis", 109);
-		peliculas[9] = new Pelicula(3, "El resplandor", 146);
-		peliculas[10] = new Pelicula(3, "Dracula", 155);
-		peliculas[11] = new Pelicula(3, "Cisne negro", 100);
-
-		peliculas[12] = new Pelicula(4, "2001: Odisea en el espacio", 142);
-		peliculas[13] = new Pelicula(4, "La novia de Frankenstein", 75);
-		peliculas[14] = new Pelicula(4, "El planeta de los simios", 115);
-		peliculas[15] = new Pelicula(4, "Alien, el octavo pasajero", 117);*/
-
-		// ARRAYLIST PARA PARA PELIS SELECCIONADAS
-		ArrayList <Pelicula> pelis_seleccion = new ArrayList<>();
-
 		this.controladorPanelGeneros = controladorPanelGeneros;
 
 		setLayout(null);
@@ -97,7 +69,7 @@ public class PanelGeneros extends JPanel {
 		lista_pelis.setEnabled(false);
 		scrollPane.setViewportView(lista_pelis);
 		
-		DefaultListModel modelo = new DefaultListModel();//necesario crear un modelo con el que llenar el jlist
+		//necesario crear un modelo con el que llenar el jlist
 		JButton btnAnadir = new JButton("Continuar");
 		btnAnadir.setEnabled(false);
 		
@@ -111,72 +83,15 @@ public class PanelGeneros extends JPanel {
 		
 		JButton btnElegir = new JButton("Seleccionar");
 		btnElegir.setBounds(61, 304, 168, 23);
-		btnElegir.addActionListener(new ActionListener() {
-		
+		btnElegir.addActionListener(new ActionListener() {		
 
 			public void actionPerformed(ActionEvent arg0) {
 				
 				seleccion = txt_seleccion.getText();// recogemos el dato de seleccion de genero
 
-				if (seleccion.equals("1")) {
+				if (seleccion.equals("1")||seleccion.equals("2")||seleccion.equals("3")||seleccion.equals("4")) {
 					modelo.clear();//vaciamos el jlist
-					for (int i = 0; i < peliculas.length; i++) {
-						if (peliculas[i].getGenero() == 1) {
-							String resultado = "";
-							System.out.println(peliculas[i].getTitulo());
-							resultado += peliculas[i].getTitulo() + "\n";
-							modelo.addElement(resultado);
-							txt_seleccion.setText("Drama");
-							
-						}
-
-					}
-					btnAnadir.setEnabled(true);
-
-				}
-				if (seleccion.equals("2")) {
-					modelo.clear();
-					for (int i = 0; i < peliculas.length; i++) {
-						if (peliculas[i].getGenero() == 2) {
-							String resultado = "";
-							System.out.println(peliculas[i].getTitulo());
-							resultado += peliculas[i].getTitulo() + "\n";
-							modelo.addElement(resultado);
-							txt_seleccion.setText("Comedia");
-						
-							
-						
-						}
-
-					}
-					btnAnadir.setEnabled(true);
-				}
-				if (seleccion.equals("3")) {
-					modelo.clear();
-					for (int i = 0; i < peliculas.length; i++) {
-						if (peliculas[i].getGenero() == 3) {
-							String resultado = "";
-							System.out.println(peliculas[i].getTitulo());
-							resultado += peliculas[i].getTitulo() + "\n";
-							modelo.addElement(resultado);
-							txt_seleccion.setText("Terror");
-							
-						}
-					}
-					btnAnadir.setEnabled(true);
-
-				}
-				if (seleccion.equals("4")) {
-					modelo.clear();
-					for (int i = 0; i < peliculas.length; i++) {
-						if (peliculas[i].getGenero() == 4) {
-							String resultado = "";
-							System.out.println(peliculas[i].getTitulo());
-							resultado += peliculas[i].getTitulo() + "\n";
-							modelo.addElement(resultado);
-							txt_seleccion.setText("Ciencia ficción");
-						}
-					}
+					mostar_pelis_genero(Integer.parseInt(seleccion));
 					btnAnadir.setEnabled(true);
 
 				}
@@ -186,8 +101,7 @@ public class PanelGeneros extends JPanel {
 					txt_seleccion.setText("");
 					
 				}
-				
-			
+						
 				lista_pelis.setModel(modelo);
 			}
 		});
@@ -211,6 +125,19 @@ public class PanelGeneros extends JPanel {
 		initializeEvents();
 
 	}
+	 private void mostar_pelis_genero(int genero) {
+			for (int i = 0; i < peliculas.length; i++) {
+				if (peliculas[i].getGenero() == genero) {
+					String resultado = "";
+					System.out.println(peliculas[i].getTitulo());
+					resultado += peliculas[i].getTitulo() + "\n";
+					modelo.addElement(resultado);
+					
+				}
+			}
+	
+		}
+		 
 
 	private void initializeEvents() {
 		this.btnVolver.addActionListener(listenerBotonVolver(this.controladorPanelGeneros));
@@ -225,13 +152,6 @@ public class PanelGeneros extends JPanel {
 		};
 	}
 
-	/*public static  Pelicula[] getPeliculas() {
-		return peliculas;
-	}
-
-	public static void setPeliculas(Pelicula[] peliculas) {
-		PanelGeneros.peliculas = peliculas;
-	}*/
 
 	public static String getSeleccion() {
 		return seleccion;

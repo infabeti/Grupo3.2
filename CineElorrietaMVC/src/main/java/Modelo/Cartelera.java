@@ -1,8 +1,12 @@
 package Modelo;
 
+import java.awt.Component;
 import java.util.ArrayList;
+
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
 import Controlador.Controlador;
+import Vista.PanelGeneros;
 import Vista.PanelPeliculas;
 
 public class Cartelera {
@@ -14,6 +18,12 @@ public class Cartelera {
 
 	public Cartelera() {
 		super();
+	
+	}
+	public Cartelera(Pelicula[] peliculas,ArrayList<Pelicula> peliculasSabado,ArrayList<Pelicula> peliculasDomingo) {
+		this.peliculas=peliculas;
+		this.peliculasSabado = peliculasSabado;
+		this.peliculasDomingo = peliculasDomingo;
 	
 	}
 
@@ -73,7 +83,44 @@ public class Cartelera {
 	
 	}
 	
+	
+	public static String generar_resumen_cartelera() {
+		int horas,minutos;
+		String resumen="";
+
+		resumen =resumen+"Sábado: \n";
+		
+		for(int i=0;i<peliculasSabado.size();i++) {
+			horas=(int) Math.floor((peliculasSabado.get(i).getDuracion())/60);
+			minutos=(int) Math.round((peliculasSabado.get(i).getDuracion())%60);
+		
+		resumen=resumen+peliculasSabado.get(i).getTitulo()+"-> "+horas+"h "+minutos+"m \n";
+		
+		}
+		
+		resumen =resumen+"\nDomingo: \n";
+	
+		for(int i=0;i< peliculasDomingo.size();i++) {
+		horas=(int) Math.floor(( peliculasDomingo.get(i).getDuracion())/60);
+		minutos=(int) Math.round(( peliculasDomingo.get(i).getDuracion())%60);
+		
+		resumen=resumen+ peliculasDomingo.get(i).getTitulo()+"-> "+horas+"h "+minutos+"m \n";
+		
+
+	}
+	return resumen;
+	
+}
+
+
+	
+	
+
+
+}
 
 	
 
-}
+	
+
+

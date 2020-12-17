@@ -25,13 +25,10 @@ public class ControladorPanelResumen {
 	public void mostrarPanelResumen() {
 		this.panelResumen = new PanelResumen(this);
 		this.vista.mostrarPanel(this.panelResumen);
-
+		this.panelResumen.texto_resumen();
 		
-		
-		panelResumen.getTxtResumen().append(modelo.generar_resumen());
 	}
 		
-	
 	
 	public void accionadoBotonRechazarPanelResumen() {
 		this.controlador.navegarPanelGeneros();
@@ -50,7 +47,6 @@ public class ControladorPanelResumen {
 		return new PanelResumen(controladorResumen);
 	}
 	
-	
-	
+
 
 }
