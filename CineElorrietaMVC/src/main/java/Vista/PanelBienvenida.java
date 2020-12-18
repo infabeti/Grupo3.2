@@ -7,39 +7,39 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import Controlador.ControladorPanelBienvenida;
 
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JTextField;
+import java.awt.Color;
+
 @SuppressWarnings("serial")
 public class PanelBienvenida extends JPanel{
-
-	private JButton btnGeneros;
 	private JLabel lblBienvenida;
 	private ControladorPanelBienvenida controladorPanelBienvenida;
 	
 	public PanelBienvenida(ControladorPanelBienvenida controladorPanelBienvenida) {
+		setBackground(Color.DARK_GRAY);
 		this.controladorPanelBienvenida = controladorPanelBienvenida;
 		
 		setLayout(null);
 		
-		lblBienvenida = new JLabel("Panel Bienvenida");
-		lblBienvenida.setBounds(58, 35, 115, 14);
+		lblBienvenida = new JLabel("\u00A1Bienvenid@! ");
+		lblBienvenida.setForeground(Color.WHITE);
+		lblBienvenida.setFont(new Font("Arial", Font.PLAIN, 58));
+		lblBienvenida.setBounds(50, 11, 367, 136);
 		add(lblBienvenida);
 		
-		btnGeneros = new JButton("Generos");
-		btnGeneros.setBounds(58, 116, 120, 23);
-		add(btnGeneros);
+		JLabel lblNewLabel = new JLabel("Cartelera del cine Elorrieta");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblNewLabel.setBounds(99, 174, 244, 44);
+		add(lblNewLabel);
 		
 		initializeEvents();
 	}
 	
 	private void initializeEvents() {
-		this.btnGeneros.addActionListener(listenerBotonGeneros(this.controladorPanelBienvenida));
-	}
-	
-	private ActionListener listenerBotonGeneros(ControladorPanelBienvenida controladorPanelBienvenida) {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Generos");
-				controladorPanelBienvenida.accionadoBottonMostrarPanelGeneros();
-			}
-		};
 	}
 }
+
+
