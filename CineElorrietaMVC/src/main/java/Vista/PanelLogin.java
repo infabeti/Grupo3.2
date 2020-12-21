@@ -25,7 +25,7 @@ public class PanelLogin extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelLogin(ControladorPanelLogin controladorPanelLogin) {
-		setBackground(Color.DARK_GRAY);
+		setBackground(Color.BLACK);
 		
 		setLayout(null);
 		
@@ -68,7 +68,7 @@ public class PanelLogin extends JPanel {
 				
 			}
 		});
-		btnEntrar.setBounds(198, 327, 89, 23);
+		btnEntrar.setBounds(201, 343, 89, 23);
 		add(btnEntrar);
 		
 		lblError = new JLabel("usuario/contrase\u00F1a incorrectos");
@@ -78,8 +78,8 @@ public class PanelLogin extends JPanel {
 		
 		lblLogin = new JLabel("LOGIN");
 		lblLogin.setForeground(Color.WHITE);
-		lblLogin.setFont(new Font("Arial", Font.PLAIN, 40));
-		lblLogin.setBounds(172, 78, 143, 55);
+		lblLogin.setFont(new Font("Arial", Font.BOLD, 40));
+		lblLogin.setBounds(176, 115, 143, 55);
 		add(lblLogin);
 		lblError.setVisible(false);
 	

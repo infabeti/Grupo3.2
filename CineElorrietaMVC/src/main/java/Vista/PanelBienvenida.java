@@ -18,21 +18,20 @@ public class PanelBienvenida extends JPanel{
 	private ControladorPanelBienvenida controladorPanelBienvenida;
 	
 	public PanelBienvenida(ControladorPanelBienvenida controladorPanelBienvenida) {
-		setBackground(Color.DARK_GRAY);
+		setBackground(Color.BLACK);
 		this.controladorPanelBienvenida = controladorPanelBienvenida;
-		
 		setLayout(null);
 		
-		lblBienvenida = new JLabel("\u00A1Bienvenid@! ");
+		lblBienvenida = new JLabel("BIENVENIDOS");
+		lblBienvenida.setBounds(80, 133, 367, 121);
 		lblBienvenida.setForeground(Color.WHITE);
-		lblBienvenida.setFont(new Font("Arial", Font.PLAIN, 58));
-		lblBienvenida.setBounds(73, 78, 367, 136);
+		lblBienvenida.setFont(new Font("Arial", Font.BOLD, 50));
 		add(lblBienvenida);
 		
-		JLabel lblNewLabel = new JLabel("Cartelera del cine Elorrieta");
+		JLabel lblNewLabel = new JLabel("CARTELERA DE CINE ELORRIETA");
+		lblNewLabel.setBounds(66, 253, 367, 44);
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
-		lblNewLabel.setBounds(139, 228, 244, 44);
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 22));
 		add(lblNewLabel);
 		
 		initializeEvents();

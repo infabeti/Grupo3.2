@@ -28,7 +28,7 @@ public class ControladorPanelEditar {
 		this.vista.mostrarPanel(this.paneleditar);
 	}
 	
-	public void accionadoBottonVolverPanelGeneros() {
+	public void accionadoBottonVolverPanelEditar() {
 		this.controlador.navegarPanelBienvenida();
 	}
 	public void accionadoBotonSeleccionarPanelGeneros(int genero) {

@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 import Controlador.ControladorPanelEditar;
 import Controlador.ControladorPanelGeneros;
+import Modelo.Cartelera;
 import Modelo.Pelicula;
 import javax.swing.JComboBox;
 import java.awt.Font;
@@ -56,25 +57,7 @@ public class PanelEditar extends JPanel {
 
 		 //ARRAY DE PELICULAS
 		
-		peliculas[0] = new Pelicula(1, "Handia", 1.16);
-		peliculas[1] = new Pelicula(1, "La lista de Schindler", 1.97);
-		peliculas[2] = new Pelicula(1, "Cadena Perpetua", 1.42);
-		peliculas[3] = new Pelicula(1, "Million Dollar Baby", 1.33);
-
-		peliculas[4] = new Pelicula(2, "Scary movie", 1.30);
-		peliculas[5] = new Pelicula(2, "El gran Lebowsky", 1.19);
-		peliculas[6] = new Pelicula(2, "La vida de Brian", 1.34);
-		peliculas[7] = new Pelicula(2, "Aterriza como puedas", 1.17);
-
-		peliculas[8] = new Pelicula(3, "Psicosis", 1.09);
-		peliculas[9] = new Pelicula(3, "El resplandor", 1.46);
-		peliculas[10] = new Pelicula(3, "Dracula", 1.55);
-		peliculas[11] = new Pelicula(3, "Cisne negro", 1.00);
-
-		peliculas[12] = new Pelicula(4, "2001: Odisea en el espacio", 1.42);
-		peliculas[13] = new Pelicula(4, "La novia de Frankenstein", 0.75);
-		peliculas[14] = new Pelicula(4, "El planeta de los simios", 1.15);
-		peliculas[15] = new Pelicula(4, "Alien, el octavo pasajero", 1.17);
+		Pelicula[] peliculas=  Cartelera.getPeliculas();
 		
 
 		// ARRAYLIST PARA PARA PELIS SELECCIONADAS
@@ -108,15 +91,25 @@ public class PanelEditar extends JPanel {
 	    
 
 		btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ControladorPanelEditar.accionadoBottonVolverPanelEditar();
+			}
+		});
 		btnVolver.setBounds(318, 355, 126, 23);
 		add(btnVolver);
+		
+		
+
+
+		
 		
 		btnEditar = new JButton("Modificar");
 		btnEditar.setBounds(318, 206, 126, 23);
 		add(btnEditar);
 		
 		btnInsertar = new JButton("Insertar nueva");
-		//CODIGO NUEVO NO SE DONDE VA
+	
 		btnInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String [] info= new String[3];
@@ -125,6 +118,8 @@ public class PanelEditar extends JPanel {
 				info[2]=editDuracion.getText();
 				
 				tableModel.addRow(info);
+				
+				
 				
 				editTitulo.setText("");
 				editGenero.setText("");
@@ -184,7 +179,6 @@ public class PanelEditar extends JPanel {
 		
 
 		
-		//CODIGO NUEVO NO SE DONDE VA
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
