@@ -20,7 +20,9 @@ public class Controlador {
 	private ControladorPanelLogin controladorPanelLogin;
 	private ControladorPanelPeliculas controladorPanelPeliculas;
 	private ControladorPanelResumen controladorPanelResumen;
+	private ControladorPanelEditar ControladorPanelEditar;
 	private ControladorPanelFin controladorPanelFin;
+
 	
 	public Controlador(Modelo modelo, Vista vista) {
 		this.modelo = modelo;
@@ -30,6 +32,7 @@ public class Controlador {
 		this.controladorPanelLogin = new ControladorPanelLogin(this.modelo, this.vista, this);
 		this.controladorPanelPeliculas = new ControladorPanelPeliculas(this.modelo, this.vista, this);
 		this.controladorPanelResumen = new ControladorPanelResumen(this.modelo, this.vista, this);
+		this.ControladorPanelEditar = new ControladorPanelEditar(this.modelo, this.vista, this);
 		this.controladorPanelFin = new ControladorPanelFin(this.modelo, this.vista, this);
 		Cartelera.cargar_pelis();
 		this.navegarPanelBienvenida();
@@ -61,6 +64,13 @@ public class Controlador {
 		this.controladorPanelResumen.mostrarPanelResumen();
 		
 	}
+	
+	public void navegarPanelEditar() {
+		System.out.println("Navegar panel Editar");
+		this.ControladorPanelEditar.mostrarPanelEditar();
+		
+	}
+	
 	public void navegarPanelFin() {
 		System.out.println("Navegar panel Fin");
 		this.controladorPanelFin.mostrarPanelFin();

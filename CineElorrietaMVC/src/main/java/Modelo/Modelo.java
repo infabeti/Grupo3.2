@@ -30,11 +30,12 @@ public class Modelo {
 	private PanelGeneros panelGeneros;
 	private PanelBienvenida panelBienvenida;
 	private PanelPeliculas panelPelciulas;
+
 	Pelicula[] peliculas=Cartelera.getPeliculas();
 	static ArrayList<Pelicula> peliculasSabado=Cartelera.getPeliculasSabado();
 	static ArrayList<Pelicula> peliculasDomingo=Cartelera.getPeliculasDomingo();
 
-	
+
 	
 	//metodo que escribi en el fichero de logs los errores que le introduzcamos por parámetro
 	public  void escribirErrorEnLog(String error) {

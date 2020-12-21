@@ -10,8 +10,8 @@ public class ControladorPanelLogin {
 	private Vista vista;
 	private Controlador controlador;
 	private PanelLogin panelLogin;
-	private final String usuario="usuario";
-	private final String contrasena="12345";
+	private final String usuario="usuario", usuario2="admin";
+	private final String contrasena="12345", contrasena2="admin";
 	
 	
 	
@@ -32,12 +32,16 @@ public class ControladorPanelLogin {
 		return new PanelLogin(controladorLogin);
 	}
 
-	public void accionadoBotonEntrarPanelLogin(String usuario2, String pass) {
+	public void accionadoBotonEntrarPanelLogin(String user, String pass) {
 		System.out.println("Ejecutando evento Boton Entrar");
 		
-		if(usuario2.equals(this.usuario) && pass.equals(this.contrasena)) {		
+		if(user.equals(this.usuario) && pass.equals(this.contrasena)) {		
 			System.out.println("Usuario/Contraseña correctos");
 			this.controlador.navegarPanelGeneros();
+		}
+		if(user.equals(this.usuario2) && pass.equals(this.contrasena2)) {
+			System.out.println("Usuario/Contraseña correctos");
+			this.controlador.navegarPanelEditar();
 		}
 		else {
 			System.out.println("Usuario/contraseña incorrectos");
